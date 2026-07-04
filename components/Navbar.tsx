@@ -1,50 +1,62 @@
+"use client";
+
+import { Heart, Search, ShoppingCart, User } from "lucide-react";
+
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-[#3B2618]/80 backdrop-blur-md border-b border-yellow-500/20">
-
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+    <nav className="sticky top-0 z-50 border-b border-yellow-500/20 bg-[#111111]/80 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
         {/* Logo */}
-        <h1 className="text-3xl font-bold text-yellow-500 tracking-wider cursor-pointer">
-          TN PERFUME
-        </h1>
+        <div className="cursor-pointer">
+          <h1 className="text-3xl font-bold tracking-widest text-yellow-500">
+            TN
+            <span className="ml-2 text-white">PERFUMES</span>
+          </h1>
+        </div>
 
         {/* Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-gray-300">
-
-          <li className="hover:text-yellow-500 transition duration-300 cursor-pointer">
-            Home
-          </li>
-
-          <li className="hover:text-yellow-500 transition duration-300 cursor-pointer">
-            Shop
-          </li>
-
-          <li className="hover:text-yellow-500 transition duration-300 cursor-pointer">
-            Collections
-          </li>
-
-          <li className="hover:text-yellow-500 transition duration-300 cursor-pointer">
-            About
-          </li>
-
-          <li className="hover:text-yellow-500 transition duration-300 cursor-pointer">
-            Contact
-          </li>
-
+        <ul className="hidden items-center gap-8 text-sm font-medium text-gray-300 lg:flex">
+          <li className="cursor-pointer transition hover:text-yellow-500">Home</li>
+          <li className="cursor-pointer transition hover:text-yellow-500">Shop</li>
+          <li className="cursor-pointer transition hover:text-yellow-500">Brands</li>
+          <li className="cursor-pointer transition hover:text-yellow-500">Deals</li>
+          <li className="cursor-pointer transition hover:text-yellow-500">About</li>
+          <li className="cursor-pointer transition hover:text-yellow-500">Contact</li>
         </ul>
 
         {/* Right Side */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-5">
 
-          <button className="border border-yellow-500 text-yellow-500 px-5 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition duration-300">
-            Cart
-          </button>
+          <Search
+            size={22}
+            className="cursor-pointer text-white transition hover:text-yellow-500"
+          />
+
+          <Heart
+            size={22}
+            className="cursor-pointer text-white transition hover:text-yellow-500"
+          />
+
+          <User
+            size={22}
+            className="cursor-pointer text-white transition hover:text-yellow-500"
+          />
+
+          <div className="relative cursor-pointer">
+            <ShoppingCart
+              size={24}
+              className="text-white transition hover:text-yellow-500"
+            />
+
+            <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-yellow-500 text-xs font-bold text-black">
+              0
+            </span>
+          </div>
 
         </div>
 
       </div>
-
     </nav>
   );
 }

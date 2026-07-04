@@ -86,10 +86,10 @@ export default function Hero() {
           </div>
 
           <Image
-            src="/images/perfume.png"
+            src="/images/perfumes.png"
             alt="TN Perfume"
-            width={420}
-            height={560}
+            width={640}
+            height={780}
             className="relative z-10 hover:scale-105 duration-500"
           />
 
