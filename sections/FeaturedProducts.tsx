@@ -3,37 +3,42 @@ import Image from "next/image";
 export default function FeaturedProducts() {
   const products = [
     {
-      name: "Gucci Flora",
+      name: "Sauvage",
       inspired: "Inspired by Gucci Flora",
-      price: "Rs. 1,300",
-      image: "/images/products/gucci-flora.png",
+      price: "Rs. 1,399",
+      oldPrice: "Rs. 1,800",
+      image: "/images/products/sauvage.png",
       badge: "Best Seller",
     },
     {
-      name: "Sauvage",
+      name: "Gucci Flora",
       inspired: "Inspired by Dior Sauvage",
-      price: "Rs. 1,400",
-      image: "/images/products/sauvage.png",
+      price: "Rs. 1,299",
+      oldPrice: "Rs. 1,700",
+      image: "/images/products/gucci-flora.png",
       badge: "Popular",
     },
     {
       name: "Office Man",
       inspired: "Inspired by Office Man",
-      price: "Rs. 1,500",
+      price: "Rs. 1,499",
+      oldPrice: "Rs. 1,900",
       image: "/images/products/office-man.png",
       badge: "Premium",
     },
     {
       name: "Jannan Sports",
       inspired: "Inspired by Jannan Sports",
-      price: "Rs. 1,400",
+      price: "Rs. 1,399",
+      oldPrice: "Rs. 1,800",
       image: "/images/products/jannan-sports.png",
       badge: "New",
     },
     {
       name: "Jannan Gold",
       inspired: "Inspired by Jannan Gold",
-      price: "Rs. 1,400",
+      price: "Rs. 1,499",
+      oldPrice: "Rs. 1,800",
       image: "/images/products/jannan-gold.png",
       badge: "Luxury",
     },
@@ -52,7 +57,7 @@ export default function FeaturedProducts() {
 
           <div
             key={index}
-            className="relative bg-zinc-900 rounded-3xl p-6 border border-yellow-500/20 hover:border-yellow-500 hover:-translate-y-2 transition-all duration-300 shadow-lg"
+            className="relative bg-zinc-900 rounded-3xl p-6 border border-yellow-500/20 hover:border-yellow-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-300 shadow-lg"
           >
 
             {/* Badge */}
@@ -98,11 +103,17 @@ export default function FeaturedProducts() {
 
             <div className="flex justify-between items-center mt-6">
 
-              <span className="text-yellow-500 text-2xl font-bold">
-                {product.price}
-              </span>
+            <div>
+              <p className="text-gray-500 line-through text-sm">
+               {product.oldPrice}
+              </p>
 
-              <button className="bg-yellow-500 text-black px-5 py-3 rounded-full font-semibold hover:bg-yellow-400 transition">
+               <p className="text-yellow-500 text-2xl font-bold">
+               {product.price}
+             </p>
+             </div>
+
+              <button className="rounded-full bg-yellow-500 px-5 py-3 font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-400">
                 Add to Cart
               </button>
 
